@@ -1,3 +1,4 @@
+import { GeolocationModule } from './geolocation/geolocation.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,7 +20,8 @@ import { AppEffects } from './app.effects';
     AppRoutingModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    GeolocationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

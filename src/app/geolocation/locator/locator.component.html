@@ -1,0 +1,10 @@
+<div *ngIf="state$ | async as state">
+  <div *ngIf="!state.latitude && !state.loading">This application needs your geolocation.</div>
+  <p *ngIf="state.loading">Loading...</p>
+  <button (click)="getCoords()" *ngIf="!state.latitude && !state.loading">
+    Get My Geolocation
+  </button>
+  <div *ngIf="!!state.latitude && !!state.longitude">
+    Coords: {{state.latitude}}, {{state.longitude}}
+  </div>
+</div>

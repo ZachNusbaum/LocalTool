@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 
 export enum GeolocationActionTypes {
   FetchCoordinates = '[Geolocation] Fetch Coordinates',
-  ReceiveCoordinates = '[Geolocation] Receive Coordinates'
+  ReceiveCoordinates = '[Geolocation] Receive Coordinates',
+  ResetCoordinates = '[Geolocation] Reset'
 }
 
 export class FetchCoordinates implements Action {
@@ -14,4 +15,8 @@ export class ReceiveCoordinates implements Action {
   constructor(public payload: {}) {}
 }
 
-export type GeolocationActions = FetchCoordinates | ReceiveCoordinates;
+export class ResetCoordinates implements Action {
+  readonly type = GeolocationActionTypes.ResetCoordinates;
+}
+
+export type GeolocationActions = FetchCoordinates | ReceiveCoordinates | ResetCoordinates;

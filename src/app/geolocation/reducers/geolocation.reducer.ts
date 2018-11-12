@@ -30,6 +30,9 @@ export function reducer(state = initialState, action: GeolocationActions): State
     case GeolocationActionTypes.ReceiveCoordinates:
       return {...state, ...action.payload};
 
+    case GeolocationActionTypes.ResetCoordinates:
+      return initialState;
+
     default:
       return state;
   }

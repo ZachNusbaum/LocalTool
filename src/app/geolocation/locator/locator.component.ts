@@ -2,7 +2,7 @@ import { GeoLocationService } from './../geolocation.service';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromGeolocation from '../reducers/geolocation.reducer';
-import { FetchCoordinates } from '../actions/geolocation.actions';
+import { FetchCoordinates, ResetCoordinates } from '../actions/geolocation.actions';
 import { TouchSequence } from 'selenium-webdriver';
 @Component({
   selector: 'app-locator',
@@ -21,4 +21,7 @@ export class LocatorComponent implements OnInit {
     this.store.dispatch(new FetchCoordinates());
   }
 
+  reset() {
+    this.store.dispatch(new ResetCoordinates());
+  }
 }

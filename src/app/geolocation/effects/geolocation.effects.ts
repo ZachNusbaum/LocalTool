@@ -18,9 +18,18 @@ export class GeolocationEffects {
     }),
     map((location: any) => {
       console.log(location);
+      let coords = location.coords;
       return {
         type: GeolocationActionTypes.ReceiveCoordinates,
-        payload: { latitude: location.coords.latitude, longitude: location.coords.longitude, loading: false }
+        payload: {
+          latitude: coords.latitude,
+          longitude: coords.longitude,
+          accuracy: coords.accuracy,
+          altitude: coords.altitude,
+          altitudeAccuracy: coords.altitudeAccuracy,
+          timestamp: location.timestamp,
+          loading: false
+        }
       };
     })
   );

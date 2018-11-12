@@ -14,4 +14,4 @@ export class ReceiveCoordinates implements Action {
   constructor(public payload: {}) {}
 }
 
-export type GeolocationActions = FetchCoordinates;
+export type GeolocationActions = FetchCoordinates | ReceiveCoordinates;

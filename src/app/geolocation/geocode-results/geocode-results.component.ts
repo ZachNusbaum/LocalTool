@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromGeolocation from '../reducers/geolocation.reducer';
 
 @Component({
   selector: 'app-geocode-results',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./geocode-results.component.css']
 })
 export class GeocodeResultsComponent implements OnInit {
+  state$ = this.store.select('geolocation');
 
-  constructor() { }
+  constructor(private store: Store<fromGeolocation.State>) { }
 
   ngOnInit() {
   }

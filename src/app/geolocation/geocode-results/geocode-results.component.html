@@ -1,3 +1,4 @@
-<p>
-  geocode-results works!
-</p>
+<div *ngIf="state$ | async as state">
+  <p>Preview the application state:</p>
+  <pre>{{state | json}}</pre>
+</div>

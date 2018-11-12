@@ -154,5 +154,8 @@
       }
     }
   },
-  "defaultProject": "LocalTool"
+  "defaultProject": "LocalTool",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

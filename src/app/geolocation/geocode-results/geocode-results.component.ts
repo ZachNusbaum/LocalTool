@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromGeolocation from '../reducers/geolocation.reducer';
+import { ResetCoordinates } from '../actions/geolocation.actions';
 
 @Component({
   selector: 'app-geocode-results',
@@ -13,6 +14,10 @@ export class GeocodeResultsComponent implements OnInit {
   constructor(private store: Store<fromGeolocation.State>) { }
 
   ngOnInit() {
+  }
+
+  reset() {
+    this.store.dispatch(new ResetCoordinates());
   }
 
 }

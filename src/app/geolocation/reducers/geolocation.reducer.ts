@@ -21,7 +21,7 @@ export function reducer(state = initialState, action: GeolocationActions): State
       return {...state, loading: true};
 
     case GeolocationActionTypes.ReceiveCoordinates:
-      return Object.assign({}, state, action.payload);
+      return {...state, ...action.payload};
 
     default:
       return state;

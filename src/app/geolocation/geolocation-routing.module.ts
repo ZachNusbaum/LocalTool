@@ -2,7 +2,12 @@ import { GeocodeResultsComponent } from './geocode-results/geocode-results.compo
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
-  { path: 'result', component: GeocodeResultsComponent }
+  {
+    path: 'geocode',
+    children: [
+      {path: 'state', component: GeocodeResultsComponent}
+    ]
+  }
 ];
 
 @NgModule({

@@ -10,6 +10,7 @@ import { ResetCoordinates } from '../actions/geolocation.actions';
 })
 export class GeocodeResultsComponent implements OnInit {
   state$ = this.store.select('geolocation');
+  placesState$ = this.store.select('places');
 
   constructor(private store: Store<fromGeolocation.State>) { }
 

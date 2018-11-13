@@ -11,7 +11,7 @@ export class PlacesEffects {
   @Effect({dispatch: true})
   reverseGeocode$ = this.actions$.pipe(
     ofType(PlacesActionTypes.ReverseGeocode),
-    mergeMap((action: PlacesActions) => {
+    mergeMap((action: any) => {
       return this.geocoder.reverseGeocode(action.latitude, action.longitude);
     }),
     map((response: any) => {

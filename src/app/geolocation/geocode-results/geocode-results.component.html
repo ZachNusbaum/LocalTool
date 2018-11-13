@@ -19,6 +19,9 @@
               <li>Location accuracy is {{state.accuracy | number}} meters</li>
               <li>Your altitude is {{state.altitude ? (state.altitude | number) : 'undetermined'}}</li>
               <li>This location was retrieved on: {{state.timestamp | date:'short'}}</li>
+              <span *ngIf="placesState$ | async as place">
+                <li *ngIf="place.loaded">{{place.formatted_address}}</li>
+              </span>
             </ul>
           </div>
         </div>

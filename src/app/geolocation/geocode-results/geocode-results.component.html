@@ -17,7 +17,7 @@
               <li>Your latitude is {{state.latitude | number}}</li>
               <li>Your longitude is {{state.longitude | number}}</li>
               <li>Location accuracy is {{state.accuracy | number}}</li>
-              <li>Your altitude is {{state.altitude ? state.altitude : 'undetermined'}}</li>
+              <li>Your altitude is {{state.altitude ? (state.altitude | number) : 'undetermined'}}</li>
               <li>This location was retrieved on: {{state.timestamp | date:'short'}}</li>
             </ul>
           </div>

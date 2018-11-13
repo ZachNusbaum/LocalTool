@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
 export enum AirQualityActionTypes {
-  LoadAirQuality = '[Air Quality] Load Air Quality',
-  ReceiveAirQuality = '[Air Quality] Receive'
+  LoadAirQuality = '[Air Quality] Request Data',
+  ReceiveAirQuality = '[Air Quality] Data Received'
 }
 
 export class LoadAirQuality implements Action {

@@ -1,0 +1,54 @@
+<div *ngIf="airQual$ | async as air; else Loading">
+  <table *ngIf="!!air.loaded; else Loading" class="table table-bordered table-hover table-striped">
+    <tbody>
+      <tr>
+        <th>Location</th>
+        <td>{{air.city}}, {{air.state}}, {{air.country}}</td>
+      </tr>
+
+      <tr>
+        <th>Time</th>
+        <td>{{air.ts | date:'short'}}</td>
+      </tr>
+
+      <tr>
+        <th>Humidity</th>
+        <td>{{air.hu/100 | percent}}%</td>
+      </tr>
+
+      <tr>
+        <th>Pressure</th>
+        <td>{{air.pr}} hPa</td>
+      </tr>
+
+      <tr>
+        <th>Temperature</th>
+        <td>{{(air.tp * (9/5)) + 32 | number}}</td>
+      </tr>
+
+      <tr>
+        <th>Wind Direction</th>
+        <td>{{air.wd | number}}&deg;</td>
+      </tr>
+
+      <tr>
+        <th>Wind Speed</th>
+        <td>{{air.ws * 2.237 | number}} mph</td>
+      </tr>
+
+      <tr>
+        <th>Air Quality Index</th>
+        <td>{{air.aqius | number}}</td>
+      </tr>
+
+      <tr>
+        <th>Main Pollutant</th>
+        <td>{{air.mainus}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #Loading>
+  <p class="lead">Loading...</p>
+</ng-template>
+<a routerLink="/">Go Back</a>

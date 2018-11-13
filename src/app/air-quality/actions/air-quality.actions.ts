@@ -10,4 +10,9 @@ export class LoadAirQuality implements Action {
   constructor(public latitude: number, public longitude: number) {}
 }
 
-export type AirQualityActions = LoadAirQuality;
+export class ReceiveAirQuality implements Action {
+  readonly type = AirQualityActionTypes.ReceiveAirQuality;
+  constructor(public payload: {}) {}
+}
+
+export type AirQualityActions = LoadAirQuality | ReceiveAirQuality;

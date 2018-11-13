@@ -13,6 +13,8 @@ export interface State {
   tp: number;
   wd: number;
   ws: number;
+  aqius: number;
+  mainus: string;
 }
 
 export const initialState: State = {
@@ -26,7 +28,9 @@ export const initialState: State = {
   pr: null,
   tp: null,
   wd: null,
-  ws: null
+  ws: null,
+  aqius: null,
+  mainus: null
 };
 
 export function reducer(state = initialState, action: AirQualityActions): State {
@@ -34,6 +38,9 @@ export function reducer(state = initialState, action: AirQualityActions): State 
 
     case AirQualityActionTypes.LoadAirQuality:
       return state;
+
+    case AirQualityActionTypes.ReceiveAirQuality:
+      return Object.assign({}, state, action.payload);
 
 
     default:

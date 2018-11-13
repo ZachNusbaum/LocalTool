@@ -1,3 +1,4 @@
+import { AirQualityModule } from './air-quality/air-quality.module';
 import { GeolocationModule } from './geolocation/geolocation.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     EffectsModule.forRoot([AppEffects]),
     GeolocationModule,
-    PlacesModule
+    PlacesModule,
+    AirQualityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,11 +14,13 @@ import { AppEffects } from './app.effects';
 import { PlacesModule } from './places/places.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './core/navbar/navbar.component';
+import { HomepageComponent } from './core/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

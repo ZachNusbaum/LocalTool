@@ -2,10 +2,11 @@ import { AirQualityDisplayComponent } from './air-quality/air-quality-display/ai
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GeocodeResultsComponent } from './geolocation/geocode-results/geocode-results.component';
+import { HomepageComponent } from './core/homepage/homepage.component';
 
 const routes: Routes = [
   { path: 'air_quality', component: AirQualityDisplayComponent },
-  { path: '**', component: GeocodeResultsComponent }
+  { path: '', component: HomepageComponent }
 ];
 
 @NgModule({

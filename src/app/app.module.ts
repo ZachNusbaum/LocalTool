@@ -10,6 +10,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { PlacesModule } from './places/places/places.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppEffects } from './app.effects';
       logOnly: environment.production
     }),
     EffectsModule.forRoot([AppEffects]),
-    GeolocationModule
+    GeolocationModule,
+    PlacesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,7 +28,8 @@ export class GeolocationEffects {
           altitude: coords.altitude,
           altitudeAccuracy: coords.altitudeAccuracy,
           timestamp: location.timestamp,
-          loading: false
+          loading: false,
+          loaded: true
         }
       };
     })

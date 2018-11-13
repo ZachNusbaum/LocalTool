@@ -10,6 +10,7 @@ export interface State {
   altitude: number;
   altitudeAccuracy: number;
   timestamp: number;
+  loaded: boolean;
 }
 
 export const initialState: State = {
@@ -19,7 +20,8 @@ export const initialState: State = {
   accuracy: null,
   altitude: null,
   altitudeAccuracy: null,
-  timestamp: null
+  timestamp: null,
+  loaded: false
 };
 
 export function reducer(state = initialState, action: GeolocationActions): State {

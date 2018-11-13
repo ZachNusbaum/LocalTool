@@ -1,9 +1,29 @@
 <div *ngIf="state$ | async as state">
-  <div class="card">
-    <div class="card-header">Data Model</div>
-    <div class="card-body">
-      <pre>{{state | json}}</pre>
-      <button (click)="reset()" class="btn btn-sm btn-danger">Reset Data</button>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Data Model</div>
+        <div class="card-body">
+          <pre>{{state | json}}</pre>
+          <button (click)="reset()" class="btn btn-sm btn-danger">Reset Data</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="state.loaded">
+        <div class="card">
+          <div class="card-body">
+            <ul>
+              <li>Your latitude is {{state.latitude}}</li>
+              <li>Your longitude is {{state.longitude}}</li>
+              <li>Location accuracy is {{state.accuracy}}</li>
+              <li>Your altitude is {{state.altitude ? state.altitude : 'undetermined'}}</li>
+              <li>This location was retrieved on: {{state.timestamp | date:'short'}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>

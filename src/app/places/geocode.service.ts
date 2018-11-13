@@ -11,7 +11,7 @@ export class GeocodeService {
 
   constructor(private http: HttpClient) { }
 
-  reverseGeocode(latitude: number, longitude: number) {
+  public reverseGeocode(latitude: number, longitude: number) {
     return this.http.get(`${base_uri}?latlng=${latitude},${longitude}&key=${environment.geocode_key}`);
   }
 }

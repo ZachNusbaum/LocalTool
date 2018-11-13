@@ -1,11 +1,18 @@
 import { Action } from '@ngrx/store';
 
 export enum PlacesActionTypes {
-  LoadPlacess = '[Places] Load Placess'
+  ReverseGeocode = '[Place] Reverse Geocode',
+  ReverseGeocodeComplete = '[Place] Reverse Geocode Complete'
 }
 
-export class LoadPlacess implements Action {
-  readonly type = PlacesActionTypes.LoadPlacess;
+export class ReverseGeocode implements Action {
+  readonly type = PlacesActionTypes.ReverseGeocode;
+  constructor(public latitude: number, public longitude: number) {}
 }
 
-export type PlacesActions = LoadPlacess;
+export class ReverseGeocodeComplete implements Action {
+  readonly type = PlacesActionTypes.ReverseGeocodeComplete;
+  constructor(public payload: {}) {}
+}
+
+export type PlacesActions = ReverseGeocode | ReverseGeocodeComplete;

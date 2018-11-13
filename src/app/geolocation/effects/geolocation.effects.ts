@@ -5,6 +5,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { mergeMap, map } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
 import * as fromGeolocation from '../reducers/geolocation.reducer';
+import { ReverseGeocode } from 'src/app/places/actions/places.actions';
 
 
 @Injectable()
@@ -32,6 +33,14 @@ export class GeolocationEffects {
           loaded: true
         }
       };
+    })
+  );
+
+  @Effect()
+  receiveCoords$ = this.actions$.pipe(
+    ofType(GeolocationActionTypes.ReceiveCoordinates),
+    map((action: any) => {
+      return new ReverseGeocode(action.payload.latitude, action.payload.longitude);
     })
   );
 

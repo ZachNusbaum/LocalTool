@@ -9,19 +9,23 @@ export interface Geometry {
 export interface State {
   formatted_address: string;
   geometry: Geometry;
-
+  loaded: boolean;
 }
 
 export const initialState: State = {
   formatted_address: null,
-  geometry: {viewport: null, location_type: null}
+  geometry: {viewport: null, location_type: null},
+  loaded: false
 };
 
 export function reducer(state = initialState, action: PlacesActions): State {
   switch (action.type) {
 
-    case PlacesActionTypes.LoadPlacess:
+    case PlacesActionTypes.ReverseGeocode:
       return state;
+
+    case PlacesActionTypes.ReverseGeocodeComplete:
+      return {...state, ...action.payload}
 
 
     default:

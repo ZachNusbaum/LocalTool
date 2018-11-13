@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  geocode_key: 'AIzaSyAq2N8gmEEioSGsFHJIR9Tfa0QI2aFlAxo'
 };
 
 /*

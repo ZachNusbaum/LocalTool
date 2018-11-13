@@ -14,9 +14,9 @@
         <div class="card">
           <div class="card-body">
             <ul>
-              <li>Your latitude is {{state.latitude | number}}</li>
-              <li>Your longitude is {{state.longitude | number}}</li>
-              <li>Location accuracy is {{state.accuracy | number}}</li>
+              <li>Your latitude is {{state.latitude | number}}&deg;</li>
+              <li>Your longitude is {{state.longitude | number}}&deg;</li>
+              <li>Location accuracy is {{state.accuracy | number}} meters</li>
               <li>Your altitude is {{state.altitude ? (state.altitude | number) : 'undetermined'}}</li>
               <li>This location was retrieved on: {{state.timestamp | date:'short'}}</li>
             </ul>

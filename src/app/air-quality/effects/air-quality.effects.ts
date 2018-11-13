@@ -6,7 +6,9 @@ import { AirQualityActionTypes } from '../actions/air-quality.actions';
 export class AirQualityEffects {
 
   @Effect()
-  loadAirQualitys$ = this.actions$.pipe(ofType(AirQualityActionTypes.LoadAirQualitys));
+  loadAirQuality$ = this.actions$.pipe(
+    ofType(AirQualityActionTypes.LoadAirQuality)
+  );
 
   constructor(private actions$: Actions) {}
 }
